@@ -12,6 +12,12 @@ class FirstViewController: UIViewController {
     @IBOutlet var sendMessage : UITextField!
     @IBOutlet var receiveMessage : UILabel!
 
+    @IBAction func backTo(segue : UIStoryboardSegue){
+        let src = segue.source as! SecondViewController
+        receiveMessage.text = src.sendMessage.text
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
